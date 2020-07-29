@@ -40,16 +40,6 @@ The function will return an object with the following properties:
 | `day`        | Day                                     |
 | `toString()` | Returns a formatted string `YYYY-MM-DD` |
 
-### ES modules
-
-An ES modules built is included that will be used by build tools that support tree-shake, as Webpack and Rollup.
-
-```js
-import pascua from 'pascua';
-
-const easter = pascua(2015);
-```
-
 ## TypeScript
 
 The module is written in TypeScript and type definitions files are included.

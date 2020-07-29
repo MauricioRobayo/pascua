@@ -8,9 +8,7 @@
     "format": "prettier . --write",
     "lint": "eslint . --ext .ts --fix",
     "test": "jest --coverage",
-    "build:cjs": "tsc -p tsconfig.json",
-    "build:esm": "tsc -p tsconfig.esm.json",
-    "build": "npm run build:cjs && npm run build:esm"
+    "build": "tsc"
   },
   "license": "MIT",
   "bugs": {
