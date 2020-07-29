@@ -1,102 +1,68 @@
-# Pascua 🎆
-
-[![install size](https://packagephobia.now.sh/badge?p=pascua)](https://packagephobia.now.sh/result?p=pascua)
-[![gzip size](https://img.badgesize.io/https://unpkg.com/pascua/dist/pascua.js?compression=gzip)](https://unpkg.com/pascua/dist/pascua.js)
-[![Blazing Fast](https://img.shields.io/badge/speed-blazing%20%F0%9F%94%A5-brightgreen.svg?style=flat-square)](https://twitter.com/acdlite/status/974390255393505280)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMauricioRobayo%2Fpascua.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FMauricioRobayo%2Fpascua?ref=badge_shield)
+# Pascua 🙏
 
 [![npm version](https://badge.fury.io/js/pascua.svg)](https://badge.fury.io/js/pascua)
 [![Build Status](https://github.com/MauricioRobayo/pascua/workflows/Build%20and%20Release/badge.svg)](https://github.com/MauricioRobayo/pascua/actions?query=workflow%3A%22Build+and+Release%22)
 [![codecov](https://codecov.io/gh/MauricioRobayo/pascua/branch/master/graph/badge.svg)](https://codecov.io/gh/MauricioRobayo/pascua)
-[![codebeat badge](https://codebeat.co/badges/2f0f841e-a8f8-4427-a28d-7cc4b7314094)](https://codebeat.co/projects/github-com-mauriciorobayo-pascua-master)
-[![Greenkeeper badge](https://badges.greenkeeper.io/MauricioRobayo/pascua.svg)](https://greenkeeper.io/)
 
-Lightweight and dependency-free module to get [Colombian holidays](https://www.mauriciorobayo.com/colombian-holidays).
-
----
-
-Getting Colombian holidays is a little bit tricky because there are three types of holidays:
-
-1. **Fixed date**: 6 holidays - Celebrated the same date they fall.
-2. **Next monday**: 7 holidays - Moved to the next moday after the date they fall.
-3. **Relative to easter**: 5 holidays - Celebrated relative to [easter](https://en.wikipedia.org/wiki/Easter).
+Calculate Easter date for any given year, traditionally celebrated on the first Sunday after the [Paschal full moon](https://en.wikipedia.org/wiki/Ecclesiastical_full_moon), using the [Gauss' Easter algorithm](https://en.wikipedia.org/wiki/Computus#Gauss.27_Easter_algorithm).
 
 ## Installation
 
-To install as a dependency of your project:
+To install as a dependency:
 
-```shell
+```
 npm install pascua
 ```
 
-To load it on the browser you can use [`unpkg`](http://unpkg.org/), just add the following [script](https://unpkg.com/pascua/dist/pascua.js). The `pascua` object will be available globally.
+## Usage
 
-## Use
+`pascua` exports a single function that takes an optional `integer` value for the year.
 
-Pascua include two functions: `getHoliday` y `getAllHolidays`.
+The function will return an object with the following properties:
 
-### Tell if a given date is holiday
-
-The `getHoliday` function allows to check if a given date is a holiday. It takes as an optional argument a JavaScript date and returns the name of the holiday in case the date is a holiday, or an empty string (`""`)if it isn't.
-
-```js
-const { getHoliday } = require('pascua')
-
-const date = new Date('13-04-2017')
-const holiday = getHoliday(date)
-console.log(holiday)
-// 'Jueves Santo'
-```
-
-If the date is ommited, by defaul the function is going to use the current date.
-
-### Get all holidays for a given year
-
-The function `getAllHolidays(year)` allows to get all the holidays for a given year, returning an array with the holidays for the requested year:
+| Property     | Description                             |
+| ------------ | --------------------------------------- |
+| `year`       | Year                                    |
+| `month`      | Month                                   |
+| `day`        | Day                                     |
+| `toString()` | Returns a formatted string `YYYY-MM-DD` |
 
 ```js
-const { getAllHolidays } = require('pascua')
+const pascua = require('pascua')
 
-const holidays2010 = getAllHolidays(2010)
+// Easter date for the current year
+const easter = pascua()
+
+// Easter date for 1984
+const easter = pascua(1984)
 ```
 
-The content of the `holidays2010` variable will be the following array:
+### ES modules
+
+An ES modules built is included that will be used by build tools that support tree-shake, as Webpack and Rollup.
 
 ```js
-[
-  { date: '2010-01-01', type: 1, name: 'Año Nuevo' },
-  { date: '2010-05-01', type: 1, name: 'Día del Trabajo' },
-  { date: '2010-07-20', type: 1, name: 'Grito de la Independencia' },
-  { date: '2010-08-07', type: 1, name: 'Batalla de Boyacá' },
-  { date: '2010-12-08', type: 1, name: 'Inmaculada Concepción' },
-  { date: '2010-12-25', type: 1, name: 'Navidad' },
-  { date: '2010-01-11', type: 2, name: 'Reyes Magos' },
-  { date: '2010-03-22', type: 2, name: 'San José' },
-  { date: '2010-07-05', type: 2, name: 'San Pedro y San Pablo' },
-  { date: '2010-08-16', type: 2, name: 'Asunción de la Virgen' },
-  { date: '2010-10-18', type: 2, name: 'Día de la Raza' },
-  { date: '2010-11-01', type: 2, name: 'Todos los Santos' },
-  { date: '2010-11-15', type: 2, name: 'Independencia de Cartagena' },
-  { date: '2010-04-01', type: 3, name: 'Jueves Santo' },
-  { date: '2010-04-02', type: 3, name: 'Viernes Santo' },
-  { date: '2010-05-17', type: 3, name: 'Ascensión de Jesús' },
-  { date: '2010-06-07', type: 3, name: 'Corpus Christi' },
-  { date: '2010-06-14', type: 3, name: 'Sagrado Corazón de Jesús' },
-],
+import pascua from 'pascua'
+
+const easter = pascua(2015)
 ```
 
-Is the year is ommited, by default the function will return the holidays for the current year.
+## TypeScript
+
+The module is written in TypeScript and type definitions files are included.
 
 ## Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
-
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
+## Acknowledgements
+
+[date-easter](https://github.com/commenthol/date-easter/blob/master/index.js).
+
 ## License
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FMauricioRobayo%2Fpascua.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FMauricioRobayo%2Fpascua?ref=badge_large)
+[MIT](LICENSE)
