@@ -1,23 +1,23 @@
 const intDiv = (dividend, divisor) => Math.trunc(dividend / divisor)
 
-// "Meeus/Jones/Butcher" algorithm
-// https://es.wikipedia.org/wiki/Computus#C.C3.A1lculo
+// "Meeus/Jones/butcher" algorithm
+// https://es.wikipedia.org/wiki/computus#c.c3.a1lculo
 function pascua(year = new Date().getFullYear()) {
-  const A = year % 19
-  const B = intDiv(year, 100)
-  const C = year % 100
-  const D = intDiv(B, 4)
-  const E = B % 4
-  const F = intDiv(B + 8, 25)
-  const G = intDiv(B - F + 1, 3)
-  const H = (19 * A + B - D - G + 15) % 30
-  const I = intDiv(C, 4)
-  const K = C % 4
-  const L = (32 + 2 * E + 2 * I - H - K) % 7
-  const M = intDiv(A + 11 * H + 22 * L, 451)
-  const N = H + L - 7 * M + 114
-  const month = intDiv(N, 31)
-  const day = 1 + (N % 31)
+  const a = year % 19
+  const b = intDiv(year, 100)
+  const c = year % 100
+  const d = intDiv(b, 4)
+  const e = b % 4
+  const f = intDiv(b + 8, 25)
+  const g = intDiv(b - f + 1, 3)
+  const h = (19 * a + b - d - g + 15) % 30
+  const i = intDiv(c, 4)
+  const k = c % 4
+  const l = (32 + 2 * e + 2 * i - h - k) % 7
+  const m = intDiv(a + 11 * h + 22 * l, 451)
+  const n = h + l - 7 * m + 114
+  const month = intDiv(n, 31)
+  const day = 1 + (n % 31)
   return { year, month, day }
 }
 
