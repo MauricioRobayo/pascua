@@ -1,7 +1,7 @@
 {
   "name": "pascua",
   "version": "0.0.0-development",
-  "description": "Colombian holidays",
+  "description": "Calculate Easter date for any given year",
   "main": "dist/pascua.js",
   "scripts": {
     "lint": "eslint src",
