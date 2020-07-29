@@ -9,7 +9,7 @@ const intDiv = (a: number, b: number) => Math.trunc(a / b);
 const addZero = (n: number) => String(n).padStart(2, '0');
 
 // "Meeus/Jones/butcher" algorithm
-// https://en.wikipedia.org/wiki/Computu
+// https://en.wikipedia.org/wiki/Computus
 function pascua(year: number = new Date().getFullYear()): Easter {
   const a = year % 19;
   const b = intDiv(year, 100);
