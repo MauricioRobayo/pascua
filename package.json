@@ -1,46 +1,50 @@
 {
   "name": "pascua",
-  "version": "0.0.0-development",
-  "description": "Colombian holidays",
-  "main": "dist/pascua.js",
+  "version": "0.0.0-semantic-release",
+  "description": "Calculate Easter date for a given year",
+  "main": "lib/cjs/pascua.js",
+  "module": "lib/esm/pascua.js",
   "scripts": {
-    "lint": "eslint src",
+    "format": "prettier . --write",
+    "lint": "eslint . --ext .ts --fix",
     "test": "jest --coverage",
-    "build": "babel src/pascua.js --delete-dir-on-start --out-dir dist"
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build": "npm run build:cjs && npm run build:esm"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/MauricioRobayo/pascua/issues"
   },
   "homepage": "https://github.com/MauricioRobayo/pascua#readme",
-  "author": "Mauricio Robayo <hi@mauriciorobayo.com> (https://www.mauriciorobayo.com)",
+  "author": "Mauricio Robayo <rfmajo@gmail.com> (https://www.mauriciorobayo.com)",
   "keywords": [
-    "Colombian holidays",
-    "Festivos en Colombia",
-    "Colombia",
-    "Festivos",
-    "Holidays"
+    "easter",
+    "easter date",
+    "gregorian calendar",
+    "holidays"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.1.0",
-    "babel-preset-minify": "^0.5.0",
-    "eslint": "^6.0.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "husky": "^4.0.2",
-    "jest": "^24.8.0",
-    "lint-staged": "^9.0.0",
-    "prettier": "^1.15.3",
-    "semantic-release": "^16.0.1"
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.1",
+    "@types/jest": "^26.0.7",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-typescript": "^9.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "semantic-release": "^17.1.1",
+    "ts-jest": "^26.1.4",
+    "typescript": "^3.9.7"
   },
   "dependencies": {},
   "files": [
-    "dist"
+    "lib"
   ],
   "repository": {
     "type": "git",
@@ -53,47 +57,16 @@
     }
   },
   "lint-staged": {
-    "src/**/*.js": [
-      "eslint --fix",
-      "git add",
+    "src/**/*.ts": [
+      "eslint --fix --ext .ts",
       "jest --bail --findRelatedTests"
     ],
-    "**/*.{js,css,json,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "coverageThreshold": {
-      "global": {
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    },
-    "transform": {},
-    "collectCoverageFrom": [
-      "src/**/*.js"
+    "**/*.{ts,js,md}": [
+      "prettier --write"
     ]
   },
   "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "all"
-  },
-  "babel": {
-    "comments": false,
-    "presets": [
-      "minify",
-      [
-        "@babel/env",
-        {
-          "targets": "> 0.25%, not dead",
-          "modules": "umd"
-        }
-      ]
-    ]
+    "singleQuote": true
   },
   "commitlint": {
     "extends": [
