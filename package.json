@@ -24,15 +24,17 @@
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
+    "@types/jest": "^26.0.7",
     "eslint": "^6.0.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "^2.18.2",
     "husky": "^4.0.2",
-    "jest": "^24.8.0",
+    "jest": "^24.9.0",
     "lint-staged": "^9.0.0",
     "prettier": "^1.15.3",
     "semantic-release": "^16.0.1",
+    "ts-jest": "^26.1.4",
     "typescript": "^3.9.7"
   },
   "dependencies": {},
@@ -56,20 +58,6 @@
     ],
     "**/*.{js,css,json,md}": [
       "prettier --write"
-    ]
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "coverageThreshold": {
-      "global": {
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    },
-    "transform": {},
-    "collectCoverageFrom": [
-      "src/**/*.js"
     ]
   },
   "prettier": {

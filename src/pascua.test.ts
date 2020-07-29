@@ -1107,9 +1107,9 @@ const easterDates = [
 describe('should get Easter date for a given year', () => {
   easterDates.forEach((date) => {
     const [year, month, day] = date.split('-')
-    const easter = pascua(year)
+    const easter = pascua(Number(year))
     it(`should return Easter year, month, and date for year ${year}`, () => {
-      expect(easter.year).toBe(year)
+      expect(easter.year).toBe(Number(year))
       expect(easter.month).toBe(Number(month))
       expect(easter.day).toBe(Number(day))
     })
