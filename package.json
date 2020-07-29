@@ -1,7 +1,7 @@
 {
   "name": "pascua",
   "version": "0.0.0-semantic-release",
-  "description": "Calculate Easter date for any given year",
+  "description": "Calculate Easter date for a given year",
   "main": "lib/cjs/pascua.js",
   "module": "lib/esm/pascua.js",
   "scripts": {

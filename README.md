@@ -4,7 +4,7 @@
 [![Build Status](https://github.com/MauricioRobayo/pascua/workflows/build%20and%20release/badge.svg)](https://github.com/MauricioRobayo/pascua/actions?query=workflow%3A%22build+and+release%22)
 [![codecov](https://codecov.io/gh/MauricioRobayo/pascua/branch/master/graph/badge.svg)](https://codecov.io/gh/MauricioRobayo/pascua)
 
-Calculate Easter date for any given year, traditionally celebrated on the first Sunday after the [Paschal full moon](https://en.wikipedia.org/wiki/Ecclesiastical_full_moon), using the ["Meeus/Jones/butcher" algorithm](https://en.wikipedia.org/wiki/Computus).
+Calculate Easter date for a given year, traditionally celebrated on the first Sunday after the [Paschal full moon](https://en.wikipedia.org/wiki/Ecclesiastical_full_moon), using the ["Meeus/Jones/butcher" algorithm](https://en.wikipedia.org/wiki/Computus).
 
 **This package used to calculate colombian holidays. If you are interested in that, please use the new [colombian-holidays](https://www.npmjs.com/package/colombian-holidays) package.**
 
@@ -18,7 +18,7 @@ npm install pascua
 
 ## Usage
 
-`pascua` exports a single function that takes an optional `integer` value for the year.
+`pascua` exports a single function that takes an optional `integer` between 1583 and 4099 for the year.
 
 The function will return an object with the following properties:
 
