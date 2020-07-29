@@ -36,11 +36,10 @@
     "jest": "^24.8.0",
     "lint-staged": "^9.0.0",
     "prettier": "^1.15.3",
-    "semantic-release": "^16.0.1"
-  },
-  "dependencies": {
+    "semantic-release": "^16.0.1",
     "typescript": "^3.9.7"
   },
+  "dependencies": {},
   "files": [
     "lib"
   ],
