@@ -1,7 +1,7 @@
 const intDiv = (a, b) => Math.trunc(a / b)
 
 // "Meeus/Jones/butcher" algorithm
-// https://es.wikipedia.org/wiki/computus#c.c3.a1lculo
+// https://en.wikipedia.org/wiki/Computu
 function pascua(year = new Date().getFullYear()) {
   const a = year % 19
   const b = intDiv(year, 100)
