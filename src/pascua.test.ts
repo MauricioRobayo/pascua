@@ -1118,7 +1118,7 @@ describe('should get Easter date for a given year', () => {
     });
     it(`should return Easter date string when interpolating for year ${year}`, () => {
       expect(`Easter for ${year} is ${easter}`).toBe(
-        `Easter for ${year} is ${date}`,
+        `Easter for ${year} is ${date}`
       );
     });
   });

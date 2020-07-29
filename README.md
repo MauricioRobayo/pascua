@@ -28,13 +28,13 @@ The function will return an object with the following properties:
 | `toString()` | Returns a formatted string `YYYY-MM-DD` |
 
 ```js
-const pascua = require('pascua')
+const pascua = require('pascua');
 
 // Easter date for the current year
-const easter = pascua()
+const easter = pascua();
 
 // Easter date for 1984
-const easter = pascua(1984)
+const easter = pascua(1984);
 ```
 
 ### ES modules
@@ -42,9 +42,9 @@ const easter = pascua(1984)
 An ES modules built is included that will be used by build tools that support tree-shake, as Webpack and Rollup.
 
 ```js
-import pascua from 'pascua'
+import pascua from 'pascua';
 
-const easter = pascua(2015)
+const easter = pascua(2015);
 ```
 
 ## TypeScript

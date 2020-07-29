@@ -2,7 +2,7 @@ interface Easter {
   year: number;
   month: number;
   day: number;
-  toString: () => string
+  toString: () => string;
 }
 
 const intDiv = (a: number, b: number) => Math.trunc(a / b);
