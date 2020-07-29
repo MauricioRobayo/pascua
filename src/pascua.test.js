@@ -1107,12 +1107,19 @@ const easterDates = [
 describe('should get Easter date for a given year', () => {
   easterDates.forEach((date) => {
     const [year, month, day] = date.split('-')
-    it(`should return Easter date for year ${year}`, () => {
-      expect(pascua(year)).toEqual({
-        year,
-        month: Number(month),
-        day: Number(day),
-      })
+    const easter = pascua(year)
+    it(`should return Easter year, month, and date for year ${year}`, () => {
+      expect(easter.year).toBe(year)
+      expect(easter.month).toBe(Number(month))
+      expect(easter.day).toBe(Number(day))
+    })
+    it(`should return Easter date string when calling toString() for year ${year}`, () => {
+      expect(easter.toString()).toBe(date)
+    })
+    it(`should return Easter date string when interpolating for year ${year}`, () => {
+      expect(`Easter for ${year} is ${easter}`).toBe(
+        `Easter for ${year} is ${date}`,
+      )
     })
   })
 })

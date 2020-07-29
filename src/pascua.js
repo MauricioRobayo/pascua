@@ -1,4 +1,5 @@
 const intDiv = (a, b) => Math.trunc(a / b)
+const addZero = (n) => String(n).padStart(2, '0')
 
 // "Meeus/Jones/butcher" algorithm
 // https://en.wikipedia.org/wiki/Computu
@@ -18,7 +19,14 @@ function pascua(year = new Date().getFullYear()) {
   const n = h + l - 7 * m + 114
   const month = intDiv(n, 31)
   const day = 1 + (n % 31)
-  return { year, month, day }
+  return {
+    year,
+    month,
+    day,
+    toString() {
+      return `${this.year}-${addZero(this.month)}-${addZero(this.day)}`
+    },
+  }
 }
 
 module.exports = pascua
