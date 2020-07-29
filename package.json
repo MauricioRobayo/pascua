@@ -2,7 +2,7 @@
   "name": "pascua",
   "version": "0.0.0-development",
   "description": "Calculate Easter date for any given year",
-  "main": "dist/pascua.js",
+  "main": "lib/pascua.js",
   "scripts": {
     "lint": "eslint src",
     "test": "jest --coverage",
@@ -42,7 +42,7 @@
     "typescript": "^3.9.7"
   },
   "files": [
-    "dist"
+    "lib"
   ],
   "repository": {
     "type": "git",
