@@ -21,15 +21,6 @@ npm install pascua
 
 `pascua` exports a single function that takes an optional `integer` between 1583 and 4099 for the year.
 
-The function will return an object with the following properties:
-
-| Property     | Description                             |
-| ------------ | --------------------------------------- |
-| `year`       | Year                                    |
-| `month`      | Month                                   |
-| `day`        | Day                                     |
-| `toString()` | Returns a formatted string `YYYY-MM-DD` |
-
 ```js
 const pascua = require('pascua');
 
@@ -39,6 +30,15 @@ const easter = pascua();
 // Easter date for 1984
 const easter = pascua(1984);
 ```
+
+The function will return an object with the following properties:
+
+| Property     | Description                             |
+| ------------ | --------------------------------------- |
+| `year`       | Year                                    |
+| `month`      | Month                                   |
+| `day`        | Day                                     |
+| `toString()` | Returns a formatted string `YYYY-MM-DD` |
 
 ### ES modules
 
