@@ -2,12 +2,15 @@
   "name": "pascua",
   "version": "0.0.0-development",
   "description": "Calculate Easter date for any given year",
-  "main": "lib/pascua.js",
+  "main": "lib/cjs/pascua.js",
+  "module": "lib/esm/pascua.js",
   "scripts": {
     "format": "prettier . --write",
     "lint": "eslint . --ext .ts --fix",
     "test": "jest --coverage",
-    "build": "babel src/pascua.js --delete-dir-on-start --out-dir dist"
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build": "npm run build:cjs && npm run build:esm"
   },
   "license": "MIT",
   "bugs": {
