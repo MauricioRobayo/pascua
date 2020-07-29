@@ -6,6 +6,8 @@
 
 Calculate Easter date for any given year, traditionally celebrated on the first Sunday after the [Paschal full moon](https://en.wikipedia.org/wiki/Ecclesiastical_full_moon), using the ["Meeus/Jones/butcher" algorithm](https://en.wikipedia.org/wiki/Computus).
 
+**This package used to calculate colombian holidays. If you are interested in that, please use the new [colombian-holidays](https://www.npmjs.com/package/colombian-holidays) package.**
+
 ## Installation
 
 To install as a dependency:
