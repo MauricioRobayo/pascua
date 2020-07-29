@@ -1,4 +1,4 @@
-import pascua from './pascua'
+import pascua from './pascua';
 
 const easterDates = [
   '1000-03-30',
@@ -1102,24 +1102,24 @@ const easterDates = [
   '2098-04-20',
   '2099-04-12',
   '2100-03-28',
-]
+];
 
 describe('should get Easter date for a given year', () => {
   easterDates.forEach((date) => {
-    const [year, month, day] = date.split('-')
-    const easter = pascua(Number(year))
+    const [year, month, day] = date.split('-');
+    const easter = pascua(Number(year));
     it(`should return Easter year, month, and date for year ${year}`, () => {
-      expect(easter.year).toBe(Number(year))
-      expect(easter.month).toBe(Number(month))
-      expect(easter.day).toBe(Number(day))
-    })
+      expect(easter.year).toBe(Number(year));
+      expect(easter.month).toBe(Number(month));
+      expect(easter.day).toBe(Number(day));
+    });
     it(`should return Easter date string when calling toString() for year ${year}`, () => {
-      expect(easter.toString()).toBe(date)
-    })
+      expect(easter.toString()).toBe(date);
+    });
     it(`should return Easter date string when interpolating for year ${year}`, () => {
       expect(`Easter for ${year} is ${easter}`).toBe(
         `Easter for ${year} is ${date}`,
-      )
-    })
-  })
-})
+      );
+    });
+  });
+});
