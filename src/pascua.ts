@@ -1,4 +1,4 @@
-interface Easter {
+export interface Easter {
   year: number;
   month: number;
   day: number;
