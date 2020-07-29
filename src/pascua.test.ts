@@ -1,4 +1,4 @@
-const pascua = require('./pascua')
+import pascua from './pascua'
 
 const easterDates = [
   '1000-03-30',

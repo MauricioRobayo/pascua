@@ -38,7 +38,9 @@
     "prettier": "^1.15.3",
     "semantic-release": "^16.0.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "typescript": "^3.9.7"
+  },
   "files": [
     "dist"
   ],

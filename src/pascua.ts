@@ -1,9 +1,16 @@
-const intDiv = (a, b) => Math.trunc(a / b)
-const addZero = (n) => String(n).padStart(2, '0')
+interface Easter {
+  year: number;
+  month: number;
+  day: number;
+  toString: () => string
+}
+
+const intDiv = (a: number, b: number) => Math.trunc(a / b)
+const addZero = (n: number) => String(n).padStart(2, '0')
 
 // "Meeus/Jones/butcher" algorithm
 // https://en.wikipedia.org/wiki/Computu
-function pascua(year = new Date().getFullYear()) {
+function pascua(year: number = new Date().getFullYear()): Easter {
   const a = year % 19
   const b = intDiv(year, 100)
   const c = year % 100
@@ -29,4 +36,4 @@ function pascua(year = new Date().getFullYear()) {
   }
 }
 
-module.exports = pascua
+export default pascua
