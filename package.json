@@ -19,11 +19,10 @@
   "homepage": "https://github.com/MauricioRobayo/pascua#readme",
   "author": "Mauricio Robayo <hi@mauriciorobayo.com> (https://www.mauriciorobayo.com)",
   "keywords": [
-    "Colombian holidays",
-    "Festivos en Colombia",
-    "Colombia",
-    "Festivos",
-    "Holidays"
+    "easter",
+    "easter date",
+    "gregorian calendar",
+    "holidays"
   ],
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
