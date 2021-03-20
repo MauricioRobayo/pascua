@@ -69,5 +69,8 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "release": {
+    "branches": ["main"]
   }
 }
