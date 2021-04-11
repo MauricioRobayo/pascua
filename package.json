@@ -8,9 +8,8 @@
     "lint": "eslint . --ext .ts --fix",
     "test": "jest --coverage",
     "build": "tsc",
-    "postinstall": "husky install",
-    "postpublish": "pinst --enable",
-    "prepublishOnly": "pinst --disable"
+    "postinstall": "git config core.hooksPath .githooks || true",
+    "prepare": "git config core.hooksPath .githooks || true"
   },
   "license": "MIT",
   "bugs": {
@@ -34,10 +33,8 @@
     "eslint-config-airbnb-typescript": "^9.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
-    "husky": "^5.2.0",
     "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
-    "pinst": "^2.1.6",
     "prettier": "^2.0.5",
     "semantic-release": "^17.1.1",
     "ts-jest": "^26.1.4",
