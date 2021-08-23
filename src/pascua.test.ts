@@ -521,45 +521,49 @@ const easterDates = [
   '2100-03-28',
 ];
 
-describe('should get Easter date for a given year', () => {
-  easterDates.forEach((date) => {
-    const [year, month, day] = date.split('-');
-    const easter = pascua(Number(year));
-    it(`should return Easter year, month, and date for year ${year}`, () => {
-      expect(easter.year).toBe(Number(year));
-      expect(easter.month).toBe(Number(month));
-      expect(easter.day).toBe(Number(day));
-    });
-    it(`should return Easter date string when calling toString() for year ${year}`, () => {
-      expect(easter.toString()).toBe(date);
-    });
-    it(`should return Easter date string when interpolating for year ${year}`, () => {
-      expect(`Easter for ${year} is ${easter}`).toBe(
-        `Easter for ${year} is ${date}`,
-      );
-    });
+describe.each(easterDates)('should return %s', (easterDate) => {
+  const [year, month, day] = easterDate.split('-');
+  const easter = pascua(Number(year));
+
+  it(`should return ${year}, ${month}, and ${day} for year ${year}`, () => {
+    expect(easter.year).toBe(Number(year));
+    expect(easter.month).toBe(Number(month));
+    expect(easter.day).toBe(Number(day));
   });
-  it('should throw an error for a year below 1583', () => {
-    expect(() => pascua(1582)).toThrow(
-      'The year should be between 1583 and 4099',
+
+  it(`should return '${easterDate}' when calling toString() for year ${year}`, () => {
+    expect(easter.toString()).toBe(easterDate);
+  });
+
+  it(`should return '${easterDate}' when interpolating for year ${year}`, () => {
+    expect(`Easter for ${year} is ${easter}`).toBe(
+      `Easter for ${year} is ${easterDate}`
     );
   });
-  it('should throw an error for a year above 4099', () => {
-    expect(() => pascua(4100)).toThrow(
-      'The year should be between 1583 and 4099',
-    );
-  });
-  it('should return Easter for the current year if no argument given', () => {
-    const currentYear = new Date().getFullYear();
-    const expectedEaster = easterDates.find(
-      (date) => parseInt(date, 10) === currentYear,
-    );
-    if (expectedEaster) {
-      const [year, month, day] = expectedEaster.split('-');
-      const easter = pascua();
-      expect(easter.year).toBe(Number(year));
-      expect(easter.month).toBe(Number(month));
-      expect(easter.day).toBe(Number(day));
-    }
-  });
+});
+
+it('should throw an error for a year below 1583', () => {
+  expect(() => pascua(1582)).toThrow(
+    'The year should be between 1583 and 4099'
+  );
+});
+
+it('should throw an error for a year above 4099', () => {
+  expect(() => pascua(4100)).toThrow(
+    'The year should be between 1583 and 4099'
+  );
+});
+
+it('should return Easter for the current year if no argument given', () => {
+  const currentYear = new Date().getFullYear();
+  const expectedEaster = easterDates.find(
+    (date) => parseInt(date, 10) === currentYear
+  );
+  if (expectedEaster) {
+    const [year, month, day] = expectedEaster.split('-');
+    const easter = pascua();
+    expect(easter.year).toBe(Number(year));
+    expect(easter.month).toBe(Number(month));
+    expect(easter.day).toBe(Number(day));
+  }
 });
