@@ -20,7 +20,7 @@ npm install pascua
 `pascua` exports a single function that takes an optional `integer` between 1583 and 4099 for the year.
 
 ```js
-import pascua from 'pascua';
+import pascua from "pascua";
 
 // Easter date for the current year
 const easter = pascua();

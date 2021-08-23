@@ -11,7 +11,7 @@ const intDiv = (a: number, b: number) => Math.trunc(a / b);
 // https://en.wikipedia.org/wiki/Computus
 function pascua(year: number = new Date().getFullYear()): Easter {
   if (year < 1583 || year > 4099) {
-    throw new Error('The year should be between 1583 and 4099');
+    throw new Error("The year should be between 1583 and 4099");
   }
   const a = year % 19;
   const b = intDiv(year, 100);
@@ -35,7 +35,7 @@ function pascua(year: number = new Date().getFullYear()): Easter {
     toString() {
       const month = String(this.month);
       const day = String(this.day);
-      return `${this.year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+      return `${this.year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
     },
   };
 }

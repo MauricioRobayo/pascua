@@ -1,6 +1,6 @@
 module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
+  preset: "ts-jest",
+  testEnvironment: "node",
   coverageThreshold: {
     global: {
       branches: 100,
@@ -9,5 +9,5 @@ module.exports = {
       statements: 100,
     },
   },
-  collectCoverageFrom: ['src/**/*.ts'],
+  collectCoverageFrom: ["src/**/*.ts"],
 };
