@@ -523,19 +523,24 @@ const easterDates = [
 
 describe.each(easterDates)('should return %s', (easterDate) => {
   const [year, month, day] = easterDate.split('-');
-  const easter = pascua(Number(year));
 
   it(`should return ${year}, ${month}, and ${day} for year ${year}`, () => {
+    const easter = pascua(Number(year));
+
     expect(easter.year).toBe(Number(year));
     expect(easter.month).toBe(Number(month));
     expect(easter.day).toBe(Number(day));
   });
 
   it(`should return '${easterDate}' when calling toString() for year ${year}`, () => {
+    const easter = pascua(Number(year));
+
     expect(easter.toString()).toBe(easterDate);
   });
 
   it(`should return '${easterDate}' when interpolating for year ${year}`, () => {
+    const easter = pascua(Number(year));
+
     expect(`Easter for ${year} is ${easter}`).toBe(
       `Easter for ${year} is ${easterDate}`
     );
