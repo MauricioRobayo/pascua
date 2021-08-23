@@ -560,13 +560,16 @@ it('should throw an error for a year above 4099', () => {
 });
 
 it('should return Easter for the current year if no argument given', () => {
+  expect.assertions(3);
   const currentYear = new Date().getFullYear();
   const expectedEaster = easterDates.find(
     (date) => parseInt(date, 10) === currentYear
   );
+
   if (expectedEaster) {
     const [year, month, day] = expectedEaster.split('-');
     const easter = pascua();
+
     expect(easter.year).toBe(Number(year));
     expect(easter.month).toBe(Number(month));
     expect(easter.day).toBe(Number(day));
