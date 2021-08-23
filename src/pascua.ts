@@ -6,7 +6,6 @@ export interface Easter {
 }
 
 const intDiv = (a: number, b: number) => Math.trunc(a / b);
-const addZero = (n: number) => String(n).padStart(2, '0');
 
 // "Meeus/Jones/butcher" algorithm
 // https://en.wikipedia.org/wiki/Computus
@@ -34,7 +33,9 @@ function pascua(year: number = new Date().getFullYear()): Easter {
     month,
     day,
     toString() {
-      return `${this.year}-${addZero(this.month)}-${addZero(this.day)}`;
+      const month = String(this.month);
+      const day = String(this.day);
+      return `${this.year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
     },
   };
 }
