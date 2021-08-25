@@ -521,16 +521,20 @@ const easterDates = [
   "2100-03-28",
 ];
 
-describe.each(easterDates)("should return %s", (easterDate) => {
-  const [year, month, day] = easterDate.split("-");
-
-  it(`should return ${year}, ${month}, and ${day} for year ${year}`, () => {
+describe("should return the correct easter date for a given year", () => {
+  it.each(easterDates)("should return %s", (easterDate) => {
+    const [year, month, day] = easterDate.split("-");
     const easter = pascua(Number(year));
 
     expect(easter.year).toBe(Number(year));
     expect(easter.month).toBe(Number(month));
     expect(easter.day).toBe(Number(day));
   });
+});
+
+describe("toString", () => {
+  const [easterDate] = easterDates;
+  const [year] = easterDate.split("-");
 
   it(`should return '${easterDate}' when calling toString() for year ${year}`, () => {
     const easter = pascua(Number(year));
@@ -547,16 +551,18 @@ describe.each(easterDates)("should return %s", (easterDate) => {
   });
 });
 
-it("should throw an error for a year below 1583", () => {
-  expect(() => pascua(1582)).toThrow(
-    "The year should be between 1583 and 4099"
-  );
-});
+describe("Errors", () => {
+  it("should throw an error for a year below 1583", () => {
+    expect(() => pascua(1582)).toThrow(
+      "The year should be between 1583 and 4099"
+    );
+  });
 
-it("should throw an error for a year above 4099", () => {
-  expect(() => pascua(4100)).toThrow(
-    "The year should be between 1583 and 4099"
-  );
+  it("should throw an error for a year above 4099", () => {
+    expect(() => pascua(4100)).toThrow(
+      "The year should be between 1583 and 4099"
+    );
+  });
 });
 
 it("should return Easter for the current year if no argument given", () => {
