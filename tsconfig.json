@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "commonjs",
     "declaration": true,
-    "outDir": "./lib",
+    "outDir": "./dis",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
