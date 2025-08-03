@@ -523,14 +523,16 @@ const easterDates = [
   "2100-03-28",
 ];
 
-test("should return the correct easter date for a given year", async (t) => {
+test("should return the correct easter date for a given year", async () => {
   for (const easterDate of easterDates) {
     const [year, month, day] = easterDate.split("-");
-    const easter = pascua(Number(year));
-    assert.equal(easter.year, Number(year));
-    assert.equal(easter.month, Number(month));
-    assert.equal(easter.day, Number(day));
-    assert.equal(easter.toString(), easterDate);
+    await test(`${year} easter is ${easterDate}`, () => {
+      const easter = pascua(Number(year));
+      assert.equal(easter.year, Number(year));
+      assert.equal(easter.month, Number(month));
+      assert.equal(easter.day, Number(day));
+      assert.equal(easter.toString(), easterDate);
+    });
   }
 });
 
