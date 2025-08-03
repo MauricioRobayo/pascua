@@ -9,7 +9,7 @@
     "lint": "biome lint --write",
     "test": "vitest run",
     "build": "tsup src/pascua.ts --dts --format cjs,esm --out-dir dist",
-    "prepublishOnly": "biome check && npm run build"
+    "prepublishOnly": "biome check && npm test && npm run build"
   },
   "license": "MIT",
   "bugs": {
