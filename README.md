@@ -4,7 +4,7 @@
 
 Get Easter date for any given year using the ["Meeus/Jones/butcher" algorithm](https://en.wikipedia.org/wiki/Computus).
 
-Easter is traditionally celebrated on the first Sunday after the [Paschal full moon](https://en.wikipedia.org/wiki/Ecclesiastical_full_moon),
+Easter is traditionally celebrated on the first Sunday after the [Paschal full moon](https://en.wikipedia.org/wiki/Ecclesiastical_full_moon).
 
 ## Installation
 
