@@ -3,6 +3,7 @@
   "version": "2.1.8",
   "description": "Calculate Easter date for a given year",
   "main": "dist/pascua.js",
+  "types": "dist/pascua.d.ts",
   "scripts": {
     "format": "biome format --write",
     "lint": "biome lint --write",
