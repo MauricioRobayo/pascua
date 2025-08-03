@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import pascua from "./pascua";
 
 const easterDates = [
@@ -525,7 +526,6 @@ describe("should return the correct easter date for a given year", () => {
   it.each(easterDates)("should return %s", (easterDate) => {
     const [year, month, day] = easterDate.split("-");
     const easter = pascua(Number(year));
-
     expect(easter.year).toBe(Number(year));
     expect(easter.month).toBe(Number(month));
     expect(easter.day).toBe(Number(day));
