@@ -8,6 +8,10 @@
   "scripts": {
     "test": "node --test"
   },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/MauricioRobayo/pascua/issues"
