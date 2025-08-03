@@ -530,18 +530,8 @@ test("should return the correct easter date for a given year", async (t) => {
     assert.equal(easter.year, Number(year));
     assert.equal(easter.month, Number(month));
     assert.equal(easter.day, Number(day));
+    assert.equal(easter.toString(), easterDate);
   }
-});
-
-test("toString returns correct format for a year", () => {
-  const [easterDate] = easterDates;
-  const [year] = easterDate.split("-");
-  const easter = pascua(Number(year));
-  assert.equal(easter.toString(), easterDate);
-  assert.equal(
-    `Easter for ${year} is ${easter}`,
-    `Easter for ${year} is ${easterDate}`
-  );
 });
 
 test("throws error for year below 1583", () => {
