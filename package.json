@@ -1,7 +1,7 @@
 {
   "name": "pascua",
   "version": "2.1.13",
-  "description": "Calculate Easter date for a given year",
+  "description": "Get Easter date for any given year",
   "main": "dist/pascua.js",
   "types": "dist/pascua.d.ts",
   "scripts": {
