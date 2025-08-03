@@ -554,9 +554,6 @@ test("throws error for year above 4099", () => {
 
 test("should return Easter for the current year if no argument given", () => {
   mock.timers.enable({ now: new Date("2000-01-01T00:00:00Z") });
-  const [year, month, day] = "2000-04-23".split("-");
   const easter = pascua();
-  assert.equal(easter.year, Number(year));
-  assert.equal(easter.month, Number(month));
-  assert.equal(easter.day, Number(day));
+  assert.equal(easter.toString(), "2000-04-23");
 });
