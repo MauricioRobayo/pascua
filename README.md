@@ -39,7 +39,7 @@ The function will return an object with the following properties:
 
 ## TypeScript
 
-The module is written in TypeScript and type definitions files are included.
+Type definitions files are included.
 
 ## Contributing
 
