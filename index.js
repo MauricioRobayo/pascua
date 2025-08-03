@@ -2,7 +2,7 @@ const intDiv = (a, b) => Math.trunc(a / b);
 
 // "Meeus/Jones/butcher" algorithm
 // https://en.wikipedia.org/wiki/Computus
-function pascua(year = new Date().getFullYear()) {
+function pascua(year = new Date().getUTCFullYear()) {
   if (year < 1583 || year > 4099) {
     throw new Error("The year should be between 1583 and 4099");
   }

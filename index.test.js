@@ -1,4 +1,4 @@
-import test from "node:test";
+import test, { mock } from "node:test";
 import assert from "node:assert/strict";
 import pascua from "./index.js";
 
@@ -553,15 +553,10 @@ test("throws error for year above 4099", () => {
 });
 
 test("should return Easter for the current year if no argument given", () => {
-  const currentYear = new Date().getFullYear();
-  const expectedEaster = easterDates.find(
-    (date) => parseInt(date, 10) === currentYear
-  );
-  if (expectedEaster) {
-    const [year, month, day] = expectedEaster.split("-");
-    const easter = pascua();
-    assert.equal(easter.year, Number(year));
-    assert.equal(easter.month, Number(month));
-    assert.equal(easter.day, Number(day));
-  }
+  mock.timers.enable({ now: new Date("2000-01-01T00:00:00Z") });
+  const [year, month, day] = "2000-04-23".split("-");
+  const easter = pascua();
+  assert.equal(easter.year, Number(year));
+  assert.equal(easter.month, Number(month));
+  assert.equal(easter.day, Number(day));
 });
