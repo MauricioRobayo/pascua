@@ -4,11 +4,11 @@
   "description": "Calculate Easter date for a given year",
   "main": "dist/pascua.js",
   "scripts": {
-    "format": "prettier . --write",
-    "lint": "eslint src --fix",
+    "format": "biome format --write",
+    "lint": "biome lint --write",
     "test": "vitest run",
     "build": "tsup src/pascua.ts --dts --format cjs,esm --out-dir dist",
-    "prepublishOnly": "npm run lint && npm run test && npm run build"
+    "prepublishOnly": "biome check && npm run build"
   },
   "license": "MIT",
   "bugs": {
@@ -23,14 +23,9 @@
     "holidays"
   ],
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.21.0",
-    "@typescript-eslint/parser": "^5.21.0",
-    "eslint": "^8.14.0",
-    "eslint-config-prettier": "^9.0.0",
-    "prettier": "^3.0.0",
-    "semantic-release": "^24.0.0",
+    "@biomejs/biome": "2.1.3",
     "tsup": "^8.5.0",
-    "typescript": "^4.6.4",
+    "typescript": "^5.8.3",
     "vitest": "^3.2.4"
   },
   "files": [
@@ -39,10 +34,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/MauricioRobayo/pascua.git"
-  },
-  "release": {
-    "branches": [
-      "main"
-    ]
   }
 }
