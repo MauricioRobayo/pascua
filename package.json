@@ -2,8 +2,8 @@
   "name": "pascua",
   "version": "3.0.1",
   "description": "Get Easter date for any given year",
-  "main": "pascua.js",
-  "types": "pascua.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "type": "module",
   "scripts": {
     "test": "node --test"

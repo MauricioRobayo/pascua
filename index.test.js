@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import pascua from "./pascua.js";
+import pascua from "./index.js";
 
 const easterDates = [
   "1583-04-10",
