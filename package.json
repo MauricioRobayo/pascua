@@ -1,6 +1,6 @@
 {
   "name": "pascua",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Get Easter date for any given year",
   "main": "index.js",
   "types": "index.d.ts",
